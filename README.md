@@ -28,7 +28,7 @@ we can use the dual number to get the derivatives of any functions
 >>> print(out.get_dual())
 0.9722222222222222
 ```
-We can get the real part of f(a) with the `Dual.re` property and use the `Dual.get_dual()` method to return the derivative. **Warning:** `Dual.re` is not a function but `Dual.get_dual()` is.
+We can get the real part of `f(a)` with the `Dual.re` property and use the `Dual.get_dual()` method to return the derivative. **Warning:** `Dual.re` is not a function but `Dual.get_dual()` is.
 
 The Dual numbers class works with the `math` library
 ```python
