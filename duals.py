@@ -126,6 +126,13 @@ class DualDict:
             new_dict[k] = 0
         return DualDict(new_dict)
 
+    def ones(self):
+        """Set all duals to 1, useful for reseting the derivatives"""
+        new_dict = dict()
+        for k in self.duals.keys():
+            new_dict[k] = 1
+        return DualDict(new_dict)
+
     @classmethod
     def divide(cls, r1, d1, r2, d2):
         """Returns the dual numbers after a division operation [(r1 +d1ε)/(r2+d2ε)]"""
@@ -302,6 +309,9 @@ class Dual:
             return self.re == value.re and self.dual == value.dual
         else:
             return self.re == value
+
+    def reset(self):
+        return Dual(self.re, self.dual.ones())
 
     def get_dual(self, tag=""):
         try:
